@@ -1,11 +1,18 @@
-DROP DATABASE tasks;
-CREATE DATABASE tasks;
-USE tasks;
+USE FLAMEGAME;
 
-CREATE TABLE tasks (
-    `id` INTEGER AUTO_INCREMENT PRIMARY KEY,
-    `priority` ENUM('danger','primary','secondary') DEFAULT 'primary', /* using bootstrap class as priority colouring */
-    `info` VARCHAR(255) NOT NULL,
-    `due` TIMESTAMP DEFAULT NULL,
-    `createdAt` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+create table product (
+id int auto_increment,
+name varchar(30),
+description varchar(400),
+price decimal(18,3),
+image varchar(30),
+primary key(id)
+);
+
+create table orderDetail (
+id int auto_increment,
+productid int,
+quantity int,
+subtotal decimal(18,3),
+primary key(id),
+foreign key(productid) references product(id));
