@@ -78,7 +78,6 @@ h5 {
   float:right;
 }
 
-
 #logo:link {
     text-decoration: none;
     color: black;
@@ -101,4 +100,19 @@ h5 {
 
 #checkoutDiv {
       text-align:center!important;
+}
+
+.card-background {
+    position: absolute;
+    left: 0px; top: 0px;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* else image blocks bubbling?! */
+}
+.card-background IMG {
+    background-size: cover;			
+    width: 100%;
+    height: 100%;
 }

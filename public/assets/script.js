@@ -11,7 +11,7 @@ let candles = [
         id:2,
         name:'Shrek',
         price: 25 ,
-        description:"It's ogrelicious. 100% Organic.",
+        description:"It's ogrelicious!!! 100% Organic.",
         img:'assets/images/shrek.jpg',
         featured: true
     },
@@ -49,6 +49,20 @@ let candles = [
     }]
     $(document).ready(function() {
         // Featured Products
+        candles.filter(function(item){
+            if (item.featured) {
+            $(`
+            <div class="card col-xs-12 col-sm-5 col-md-3  product text-center justify-content-center" id="candleDisplay">
+            <div class="card-body">
+                <img class="card-img-top" src="${item.img}" />
+                <h4 class="card-title" id="productname">${item.name}</h4>
+                <p class="card-text" id="descripton">${item.description}</p>
+                <p class="card-text" id="price">$${item.price}</p>
+                <button class="btn btn-dark btn-sm" id="addToCart">Add to Cart</button>
+            </div>
+        </div>
+            `).appendTo('#featuredProducts');
+        }})
      
         // All Products
             candles.forEach(function(item){
@@ -59,7 +73,7 @@ let candles = [
                 <h4 class="card-title" id="productname">${item.name}</h4>
                 <p class="card-text" id="descripton">${item.description}</p>
                 <p class="card-text" id="price">$${item.price}</p>
-                <button class="btn btn-dark btn-sm" id="addToCart">Add to Cart <i class="fas fa-shopping-cart" /></button>
+                <button class="btn btn-dark btn-sm" id="addToCart">Add to Cart</button>
             </div>
         </div>
             `).appendTo('#products');
@@ -69,3 +83,4 @@ let candles = [
     
     
     });
+    
