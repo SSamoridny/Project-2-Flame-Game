@@ -30,9 +30,8 @@
 	</script>
 	<link rel="stylesheet" href="https://use.typekit.net/coh0lzq.css">
 	<link rel="stylesheet" href="assets/style.css">
-	<script src="./assets/script.js">
-
-	</script>
+	<script src="./assets/script.js"></script>
+    <script src="./assets/cart.js"></script>
 
 	<!-- any NPM packages you want to include, you can directly include like this -->
 	<script src="https://unpkg.com/moment">
@@ -55,13 +54,13 @@
             <div class="collapse navbar-collapse justify-content-center text-center" id="navbarNav">
             <ul class="navbar-nav text-center justify-content-center">
                 <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="products.html">Products</a>
+                    <a class="nav-link" href="products.html">Products</a>
                 </li>
                 <li class="nav-item active">
-                <a class="nav-link" href="#">Your Cart <i class="fas fa-shopping-cart"></i> (0)<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="cart.html">Your Cart <i class="fas fa-shopping-cart"></i> (<span id="cartTotal">0</span>)</a>
                 </li>
             </ul>
             </div>
@@ -81,33 +80,8 @@
             <th scope="col" class="col-3">Cost</th>
             </tr>
         </thead>
-        <tbody>
-            <tr class="d-flex">
-            <td class="col-3"><img id="productimgcart" src="assets/images/shrek.jpg" /></td>
-            <td class="col-3">Shrek</td>
-            <td class="col-3">It's ogrelicious!!! 100% Organic.</td>
-            <td class="col-3">1</td>
-            <td class="col-3">$25</td>
-            </tr>
-            <tr class="d-flex">
-            <td class="col-3"><img id="productimgcart" src="assets/images/middlechild.jpg" /></td>
-            <td class="col-3">Middle Child</td>
-            <td class="col-3">What's your name again? 100% Organic.</td>
-            <td class="col-3">2</td>
-            <td class="col-3">$50</td>
-            </tr>
-            <tr class="d-flex">
-            <td class="col-3"><img id="productimgcart" src="assets/images/matrix.jpg" /></td>
-            <td class="col-3">Matrix</td>
-            <td class="col-3">Trinity's favourite. 100% Organic.</td>
-            <td class="col-3">1</td>
-            <td class="col-3">$25</td>
-            </tr>
-            <tr class="d-flex">
-            <td class="col-6"></td>    
-            <td class="col-6 text-right"><b>Subtotal:</b></td>
-            <td class="col-3">$100</td>
-            </tr>
+        <tbody class="cart">
+            
         </tbody>
     </table> 
         <div class="row justify-content-center text-center" id="checkoutDiv">
