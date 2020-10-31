@@ -18,8 +18,9 @@ $(document).ready(function() {
     }
 
     function getCart() {
-        return JSON.parse(localStorage.cart || "{}");
+        return JSON.parse(localStorage.cart || '{}');
     }
 
     updateCartCount();
 });
+getList()

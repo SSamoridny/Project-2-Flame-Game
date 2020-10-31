@@ -34,6 +34,6 @@ function getList(){
 //     return db.query( 'DELETE FROM tasks WHERE id=?', [ id ] )
 // }
 
-// module.exports = {
-//     getList, insertTask, updateTask, deleteTask
-// }
+module.exports = {
+    getList
+}
