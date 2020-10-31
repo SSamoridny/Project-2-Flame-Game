@@ -34,7 +34,6 @@ h5 {
 
 .navbar {
     text-align:center;
-    max-width: 500px;
     margin: auto;
 }
 
@@ -81,4 +80,19 @@ h5 {
 #pricecart{
   text-align:right!important;
   float:right;
+}
+
+.card-background {
+    position: absolute;
+    left: 0px; top: 0px;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* else image blocks bubbling?! */
+}
+.card-background IMG {
+    background-size: cover;			
+    width: 100%;
+    height: 100%;
 }
