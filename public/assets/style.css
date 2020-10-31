@@ -69,6 +69,7 @@ h5 {
 
 .navbar {
     text-align:center;
+    max-width: 500px;
     margin: auto;
 }
 
@@ -84,7 +85,6 @@ h5 {
 
 #productimgcart {
     width: 50%!important;
-    position: relative;
 }
 
 #descripton {
@@ -110,6 +110,30 @@ h5 {
 #pricecart{
   text-align:right!important;
   float:right;
+}
+
+#logo:link {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:active {
+    text-decoration: none;
+    color: black;
+}
+
+#checkoutDiv {
+      text-align:center!important;
 }
 
 .card-background {
