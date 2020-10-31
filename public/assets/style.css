@@ -1,3 +1,38 @@
+#aboutus {
+    text-align:center;
+}
+
+#pricecart{
+  text-align:right!important;
+  float:right;
+}
+
+
+#logo:link {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:active {
+    text-decoration: none;
+    color: black;
+}
+
+#checkoutDiv {
+      text-align:center!important;
+}
+
+
 h1 {
     font-family: eds-market-bold-script, sans-serif;
     font-weight: 400;
@@ -67,7 +102,6 @@ h5 {
   padding-bottom: 15px;
   padding-top: 5px;
 }
-
 
 #aboutus {
     text-align:center;
