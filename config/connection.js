@@ -1,9 +1,9 @@
 const defaultConnecton = {
     host: "localhost",
     port: 3306,
-    user: "root",
-    password: "anjalipant123",
-    database: "flamegame"
+    user: process.env.DB_USER,
+    password: process.env.DB_PWD,
+    database: process.env.DB_NAME
 };
 
 const mysql = require( 'mysql' );

@@ -8,7 +8,8 @@ CREATE TABLE `products` (
   `description` varchar(400),
   `price` decimal,
   `image` varchar(200),
-  `featured` boolean
+  `featured` boolean,
+  `stock` integer
 );
 
 CREATE TABLE `orders` (

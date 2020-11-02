@@ -46,9 +46,9 @@ $(document).ready(function() {
         function(data) {
             data.forEach(function(item){
                 let product = $(`
-                    <div class="card col-xs-12 col-sm-5 col-md-3 product text-center justify-content-center" id="candleDisplay">
+                    <div class="card col-xs-12 col-sm-5 col-lg-3 col-md-3 product text-center justify-content-center" id="candleDisplay">
                         <div class="card-body">
-                            <div class="imageContainer"></div>               
+                            <div class="imageContainer col" style="display: flex; justify-content: center;"></div>               
                             <h4 class="card-title" id="productname">${item.name}</h4>
                             <p class="card-text" id="descripton">${item.description}</p>
                             <p class="card-text" id="price">$${item.price}</p>
@@ -77,7 +77,6 @@ $(document).ready(function() {
                     "zoomWidth":426,
                     "img": `/assets/images/${item.image}`,
                     "offset":{"vertical":0,"horizontal":10},
-                    "zoomPosition":"original",
                     "zoomStyle": "z-index: 1000;"
                 });
            
