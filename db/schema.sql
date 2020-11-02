@@ -41,10 +41,3 @@ CREATE TABLE `order_items` (
 ALTER TABLE `order_items` ADD FOREIGN KEY (`orderid`) REFERENCES `orders` (`id`);
 
 ALTER TABLE `order_items` ADD FOREIGN KEY (`productid`) REFERENCES `products` (`id`);
-
-insert into products(name, description, price, image) values ("middlechild", "What's your name again? 100% Organic.", 25.00, "middlechild.jpg");
-insert into products(name, description, price, image) values ("matrix", "Trinity's favourite. 100% Organic.", 25.00, "matrix.jpg");
-insert into products(name, description, price, image) values ("shibe", "Truly rare puppers. 100% Organic.", 25.00, "shibe.jpg");
-insert into products(name, description, price, image) values ("shrek", "It's ogrelicious!!! 100% Organic.", 25.00, "shrek.jpg");
-insert into products(name, description, price, image) values ("bighero6", "Baymax loves u. 100% Organic.", 25.00, "bighero6.jpg");
-insert into products(name, description, price, image) values ("2020", "Just keep swimming... 100% Organic.", 25.00, "2020.jpg");
