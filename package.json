@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/c0dehot/project2-template#readme",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "js-image-zoom": "^0.7.0",
     "mysql": "^2.18.1"
