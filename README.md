@@ -2,11 +2,11 @@
 ![](https://img.shields.io/badge/README-GOODREADME-brightgreen)
 
 ## Table of Contents
-- [Description](#project_description)
-- [Installastion](#installation_instructions)
-- [Usage](#usage_instructions)
-- [Credits](#project_credits)
-- [License](#project_license)
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
 
 ## Description: 
 
