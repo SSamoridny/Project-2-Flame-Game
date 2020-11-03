@@ -2,7 +2,7 @@ const defaultConnecton = {
     host: 'localhost',
     port: 3306,
     user: 'root',
-    password: '1booleanbros',
+    password: 'Maiyapapaya1!',
     database: 'flamegame'
 };
 
