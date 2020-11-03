@@ -1,2 +1,5 @@
-Additional document files can be put in /docs ... like more explicit 
-installation troubleshooting, etc.
+Npm install
+mysql
+express
+dotenv
+js-image-zoom
