@@ -7,7 +7,7 @@ const defaultConnecton = {
 };
 
 const mysql = require( 'mysql' );
-const connectionString = process.env.CLEARDB_DATABASE_URL || defaultConnecton;
+const connectionString = process.env.JAWSDB_URL || defaultConnecton;
 
 class Database {
     constructor( config ) {
