@@ -1,21 +1,29 @@
-require( 'dotenv' ).config() // looks for .env ; process.env gets it's values
+require( 'dotenv' ).config()
+const express = require("express");
+const app = express();
+const order = require( './controllers/orders_controller.js' );
+const product = require( './controllers/products_controller.js' );
 
-const express = require('express')
-const apiRouter = require('./app/router/router')
-const app = express()
+// Set the port of our application
+// process.env.PORT lets the port be set by Heroku
+const PORT = process.env.PORT || 5000;
 
-const PORT = process.env.PORT || 8080
+// Use the express.static middleware to serve static content for the app from the "public" directory in the application directory.
+app.use(express.static("public"));
 
-// for parsing incoming POST data
-app.use(express.urlencoded({ extended: true }))
-app.use(express.json())
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
-// for serving all the normal html
-app.use( express.static('public') )
+app.use(order);
+app.use(product);
 
-// for routes
-apiRouter(app)
+// get the unhandled rejection and throw it to another fallback handler we already have. 
+process.on('uncaughtException', function (error){
+  console.log( `unCaught exception: `, error )
+});
 
+// Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
-    console.log( `Database (name=${process.env.DB_NAME}); Serving app on: https://localhost:${PORT}` )
-})
+  console.log( `Server listening on: http://localhost:${PORT}` );
+});

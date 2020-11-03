@@ -1,3 +1,38 @@
+#aboutus {
+    text-align:center;
+}
+
+#pricecart{
+  text-align:right!important;
+  float:right;
+}
+
+
+#logo:link {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:active {
+    text-decoration: none;
+    color: black;
+}
+
+#checkoutDiv {
+      text-align:center!important;
+}
+
+
 h1 {
     font-family: eds-market-bold-script, sans-serif;
     font-weight: 400;
@@ -32,8 +67,10 @@ h5 {
     text-align: center;
 }
 
+
 .navbar {
     text-align:center;
+    max-width: 500px;
     margin: auto;
 }
 
@@ -49,7 +86,6 @@ h5 {
 
 #productimgcart {
     width: 50%!important;
-    position: relative;
 }
 
 #descripton {
@@ -68,11 +104,6 @@ h5 {
   padding-top: 5px;
 }
 
-#desCart {
-  text-align: center;
-  float: left;
-}
-
 #aboutus {
     text-align:center;
 }
@@ -80,6 +111,30 @@ h5 {
 #pricecart{
   text-align:right!important;
   float:right;
+}
+
+#logo:link {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:visited {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:hover {
+    text-decoration: none;
+    color: black;
+}
+
+#logo:active {
+    text-decoration: none;
+    color: black;
+}
+
+#checkoutDiv {
+      text-align:center!important;
 }
 
 .card-background {
@@ -95,4 +150,29 @@ h5 {
     background-size: cover;			
     width: 100%;
     height: 100%;
+}
+
+.popup-wrapper {
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.popup {
+    font-family: arial;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 10% auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+}
+
+.popup a {
+    padding: 6px 10px;
 }
