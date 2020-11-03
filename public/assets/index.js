@@ -21,7 +21,7 @@ $(document).ready(function() {
     }
 
     function getCart() {
-        return JSON.parse(localStorage.cart || "{}");
+        return JSON.parse(localStorage.cart || '{}');
     }
 
     function saveCart() {
@@ -38,12 +38,12 @@ $(document).ready(function() {
                 quantity: 1
             }
         }
-        console.log("added to cart", cart)
+        console.log('added to cart', cart)
         saveCart();
     }
-    $.ajax("/api/products/featured", {
-        type: "GET",
-      }).then(
+    $.ajax('/api/products/featured', {
+        type: 'GET',
+    }).then(
         function(data) {
             data.forEach(function(item){
                 let featuredproduct= $(`
@@ -60,19 +60,19 @@ $(document).ready(function() {
             </div>
         </div>
             `)
-            featuredproduct.find('.cart-button').click(function() {
-                if(item.stock == 0){
-                    alert('This item is out of stock');
-                } else {
-                    if(!cart[item.id] || item.stock - cart[item.id].quantity > 0) {                       
-                        addToCart(item);
-                        $(featuredproduct).find("#stock").text(item.stock - cart[item.id].quantity);
-                    } else {
+                featuredproduct.find('.cart-button').click(function() {
+                    if(item.stock == 0){
                         alert('This item is out of stock');
+                    } else {
+                        if(!cart[item.id] || item.stock - cart[item.id].quantity > 0) {
+                            addToCart(item);
+                            $(featuredproduct).find('#stock').text(item.stock - cart[item.id].quantity);
+                        } else {
+                            alert('This item is out of stock');
+                        }
                     }
-                }
+                });
+                featuredproduct.appendTo('#featuredProducts');
             });
-            featuredproduct.appendTo('#featuredProducts');
-});
-})
+        })
 });

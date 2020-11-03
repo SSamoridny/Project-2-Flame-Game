@@ -6,7 +6,7 @@ const orm = new ORM();
 class Order {
 
     constructor() {
-        
+
     }
 
     async getOrder(id) {
@@ -26,6 +26,11 @@ class Order {
 
     async insertOrder(order) {
         let results = await orm.insertOrder(order);
+        return results;
+    }
+
+    async getLastOrder() {
+        let results = await orm.getLastOrder();
         return results;
     }
 

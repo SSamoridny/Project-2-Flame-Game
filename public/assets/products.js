@@ -20,7 +20,7 @@ $(document).ready(function() {
     }
 
     function getCart() {
-        return JSON.parse(localStorage.cart || "{}");
+        return JSON.parse(localStorage.cart || '{}');
     }
 
     function saveCart() {
@@ -37,12 +37,12 @@ $(document).ready(function() {
                 quantity: 1
             }
         }
-        console.log("added to cart", cart)
+        console.log('added to cart', cart)
         saveCart();
     }
-    $.ajax("/api/products", {
-        type: "GET",
-        }).then(
+    $.ajax('/api/products', {
+        type: 'GET',
+    }).then(
         function(data) {
             data.forEach(function(item){
                 let product = $(`
@@ -57,31 +57,31 @@ $(document).ready(function() {
                         </div>
                     </div>
                 `)
-                product.find('.cart-button').click(function() { 
+                product.find('.cart-button').click(function() {
                     if(item.stock == 0){
                         alert('This item is out of stock');
                     } else {
-                        if(!cart[item.id] || item.stock - cart[item.id].quantity > 0) {                       
+                        if(!cart[item.id] || item.stock - cart[item.id].quantity > 0) {
                             addToCart(item);
-                            $(product).find("#stock").text(item.stock - cart[item.id].quantity);
+                            $(product).find('#stock').text(item.stock - cart[item.id].quantity);
                         } else {
                             alert('This item is out of stock');
                         }
                     }
                 });
                 product.appendTo('#products');
-                let imageContainer = $(product).find(".imageContainer")[0];
+                let imageContainer = $(product).find('.imageContainer')[0];
                 let zoom = new ImageZoom(imageContainer, {
-                    "width":213,
-                    "height":213,
-                    "zoomWidth":426,
-                    "img": `/assets/images/${item.image}`,
-                    "offset":{"vertical":0,"horizontal":10},
-                    "zoomStyle": "z-index: 1000;"
+                    'width':213,
+                    'height':213,
+                    'zoomWidth':426,
+                    'img': `/assets/images/${item.image}`,
+                    'offset':{'vertical':0,'horizontal':10},
+                    'zoomStyle': 'z-index: 1000;'
                 });
-           
-        })
 
-    });      
-    
+            })
+
+        });
+
 });

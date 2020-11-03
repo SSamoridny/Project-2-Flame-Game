@@ -11,6 +11,12 @@ router.get('/api/orders',async function(req,res){
     res.json(result);
 });
 
+router.get('/api/orders/last', async function(req,res){
+    const id = req.params.id;
+    const result = (await Order.getLastOrder())[0];
+    res.json(result);
+});
+
 // Get Order by ID
 router.get('/api/orders/:id', async function(req,res){
     const id = req.params.id;

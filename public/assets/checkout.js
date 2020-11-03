@@ -1,5 +1,5 @@
 function getCart() {
-    return JSON.parse(localStorage.cart || "{}");
+    return JSON.parse(localStorage.cart || '{}');
 }
 
 function getCartArrayFromObject() {
@@ -17,7 +17,7 @@ function updateCartCount() {
     }
 }
 
-function clearCart() {    
+function clearCart() {
     localStorage.cart = JSON.stringify({});
     updateCartCount();
 }
@@ -28,11 +28,11 @@ $(document).ready(function() {
     let cart = getCartArrayFromObject();
     let subtotal = 0;
 
-    $(".checkout").click(async function(event) {
+    $('.checkout').click(async function(event) {
         event.preventDefault();
         await postOrder();
         clearCart();
-        window.location.href = 'products.html';
+        window.location.href = 'thankyou.html';
     })
 
     async function postOrderItem(orderId, orderItem) {
@@ -41,47 +41,47 @@ $(document).ready(function() {
             productId: orderItem.product.id,
             quantity: orderItem.quantity,
             price: orderItem.product.price
-        };        
+        };
         return await $.ajax(`/api/orders/${orderId}/items`, {
-            type: "POST",
+            type: 'POST',
             data: post
         });
     }
 
-    async function updateProductQuantity(orderItem) {      
+    async function updateProductQuantity(orderItem) {
         return await $.ajax(`/api/products/${orderItem.product.id}/stock/${orderItem.quantity}`, {
-            type: "PUT"
+            type: 'PUT'
         });
     }
 
     async function postOrder() {
         let post = {
-            "subtotal": subtotal,
-            "taxes": (subtotal * TAX_RATE),
-            "total": ((subtotal * TAX_RATE) + subtotal),
-            "contactEmail": $("#inputEmail").val(),
-            "deliveryMethod": $("input[name='delivery']:checked").val(),
-            "shippingFirstname": $("#firstName").val(),
-            "shippingLastname": $("#lastName").val(),
-            "shippingAddress": $("#inputAddress").val(),
-            "shippingApartment": $("#inputAddress2").val(),
-            "shippingCity": $("#inputCity").val(),
-            "shippingProvince": $("#inputProvince").val(),
-            "shippingPostal": $("#inputPostal").val(),
-            "billingCredit": $("#ccNumber").val(),
-            "billingExpiry": $("#ccExpiry").val(),
-            "billingSecurity": $("#ccSecurityCode").val() 
+            'subtotal': subtotal,
+            'taxes': (subtotal * TAX_RATE),
+            'total': ((subtotal * TAX_RATE) + subtotal),
+            'contactEmail': $('#inputEmail').val(),
+            'deliveryMethod': $('input[name=\'delivery\']:checked').val(),
+            'shippingFirstname': $('#firstName').val(),
+            'shippingLastname': $('#lastName').val(),
+            'shippingAddress': $('#inputAddress').val(),
+            'shippingApartment': $('#inputAddress2').val(),
+            'shippingCity': $('#inputCity').val(),
+            'shippingProvince': $('#inputProvince').val(),
+            'shippingPostal': $('#inputPostal').val(),
+            'billingCredit': $('#ccNumber').val(),
+            'billingExpiry': $('#ccExpiry').val(),
+            'billingSecurity': $('#ccSecurityCode').val()
         }
 
-        let results = await $.ajax("/api/orders", {
-            type: "POST",
+        let results = await $.ajax('/api/orders', {
+            type: 'POST',
             data: post
         });
 
         for(let i = 0; i < cart.length; i++) {
             await postOrderItem(results.id, cart[i]);
             await updateProductQuantity(cart[i]);
-        }    
+        }
 
         return;
     }
@@ -97,7 +97,7 @@ $(document).ready(function() {
             </tr>
         `).appendTo('.cart');
         subtotal += item.quantity * item.product.price;
-    })  
+    })
 
     $(`
         <tr class="d-flex">

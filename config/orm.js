@@ -2,36 +2,35 @@ const db = require('./connection.js');
 
 class ORM {
     constructor() {
-
     }
     getProduct(id) {
-        return db.query("SELECT * FROM products WHERE id = ?", [id])
+        return db.query('SELECT * FROM products WHERE id = ?', [id])
     }
     getProducts() {
-        return db.query("SELECT * FROM products")
+        return db.query('SELECT * FROM products')
     }
     getFeaturedProducts() {
-        return db.query("SELECT * FROM products WHERE featured = true")
+        return db.query('SELECT * FROM products WHERE featured = true')
     }
 
     getOrder(id) {
-        return db.query("SELECT * FROM orders WHERE id = ?", [id])
+        return db.query('SELECT * FROM orders WHERE id = ?', [id])
     }
 
     getOrders() {
-        return db.query("SELECT * FROM orders")
+        return db.query('SELECT * FROM orders')
     }
 
     getOrderItem(id) {
-        return db.query("SELECT * FROM order_items WHERE id = ?", [id])
+        return db.query('SELECT * FROM order_items WHERE id = ?', [id])
     }
 
     getOrderItems() {
-        return db.query("SELECT * FROM order_items")
+        return db.query('SELECT * FROM order_items')
     }
 
     getOrderItemsByOrderId(id) {
-        return db.query("SELECT * FROM order_items WHERE orderid = ?", [id])
+        return db.query('SELECT * FROM order_items WHERE orderid = ?', [id])
     }
 
     updateOrder() {
@@ -52,16 +51,16 @@ class ORM {
             \`billing_expiry\`=?,
             \`billing_security\`=?
         WHERE id=?`, [
-            order.subtotal, 
-            order.taxes, 
-            order.total, 
-            order.contactEmail, 
-            order.deliveryMethod, 
-            order.shippingFirstname, 
-            order.shippingLastname, 
-            order.shippingAddress, 
-            order.shippingApartment, 
-            order.shippingCity, 
+            order.subtotal,
+            order.taxes,
+            order.total,
+            order.contactEmail,
+            order.deliveryMethod,
+            order.shippingFirstname,
+            order.shippingLastname,
+            order.shippingAddress,
+            order.shippingApartment,
+            order.shippingCity,
             order.shippingProvince,
             order.shippingPostal,
             order.billingCredit,
@@ -70,7 +69,7 @@ class ORM {
             order.id
         ]);
     }
-    
+
     insertOrder(order) {
         return db.query(`INSERT orders (
             \`subtotal\`, 
@@ -89,16 +88,16 @@ class ORM {
             \`billing_expiry\`,
             \`billing_security\`
         ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, [
-            order.subtotal, 
-            order.taxes, 
-            order.total, 
-            order.contactEmail, 
-            order.deliveryMethod, 
-            order.shippingFirstname, 
-            order.shippingLastname, 
-            order.shippingAddress, 
-            order.shippingApartment, 
-            order.shippingCity, 
+            order.subtotal,
+            order.taxes,
+            order.total,
+            order.contactEmail,
+            order.deliveryMethod,
+            order.shippingFirstname,
+            order.shippingLastname,
+            order.shippingAddress,
+            order.shippingApartment,
+            order.shippingCity,
             order.shippingProvince,
             order.shippingPostal,
             order.billingCredit,
@@ -114,14 +113,14 @@ class ORM {
             \`quantity\`=?, 
             \`price\`=?
         WHERE id=?`, [
-            orderItem.orderId, 
-            orderItem.productId, 
-            orderItem.quantity, 
+            orderItem.orderId,
+            orderItem.productId,
+            orderItem.quantity,
             orderItem.price,
             orderItem.id
         ]);
     }
-    
+
     insertOrderItem(orderItem) {
         return db.query(`INSERT order_items (
             \`orderid\`, 
@@ -129,9 +128,9 @@ class ORM {
             \`quantity\`, 
             \`price\`
         ) VALUES (?, ?, ?, ?)`, [
-            orderItem.orderId, 
-            orderItem.productId, 
-            orderItem.quantity, 
+            orderItem.orderId,
+            orderItem.productId,
+            orderItem.quantity,
             orderItem.price
         ]);
     }
@@ -140,18 +139,18 @@ class ORM {
         return db.query(`UPDATE products SET 
             stock=stock-?
         WHERE id=?`, [
-            parseInt(amount), 
+            parseInt(amount),
             id
         ]);
     }
 
-    updateProduct(id, name, description, price, image, features) {
+    getLastOrder(){
+        return db.query('SELECT * FROM orders ORDER BY ID DESC LIMIT 1')
+    }
 
-    }
-    
-    insertProduct(name, description, price, image, features) {
-        
-    }
+
+
+
 }
 
 module.exports = ORM;

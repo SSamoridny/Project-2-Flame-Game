@@ -1,5 +1,5 @@
 function getCart() {
-    return JSON.parse(localStorage.cart || "{}");
+    return JSON.parse(localStorage.cart || '{}');
 }
 
 function getCartArrayFromObject() {
@@ -13,8 +13,8 @@ $(document).ready(function() {
     let cart = getCartArrayFromObject();
     let total = 0;
 
-    function createCartObjectFromArray() {     
-        let tmpCart = {};   
+    function createCartObjectFromArray() {
+        let tmpCart = {};
         cart.forEach(function(item) {
             tmpCart[item.product.id] = item;
         })
@@ -27,14 +27,14 @@ $(document).ready(function() {
     }
 
     cart.forEach((item, key) => {
-      let cartItems=  $(`
+        let cartItems= $(`
             <tr class="d-flex">
                 <td class="col-3"><img id="productimgcart" src="assets/images/${item.product.image}" /></td>
                 <td class="col-3">${item.product.name}</td>
                 <td class="col-3">${item.product.description}</td>
                 <td class="col-3">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary decreaseQuantity">${item.quantity <= 1 ? "x" : "-"}</button>
+                <button type="button" class="btn btn-secondary decreaseQuantity">${item.quantity <= 1 ? 'x' : '-'}</button>
                 <span class="btn btn-secondary quantity">${item.quantity}</span>
                 <button type="button" class="btn btn-secondary increaseQuantity">+</button>
               </div>
@@ -45,7 +45,7 @@ $(document).ready(function() {
         cartItems.find('.decreaseQuantity').click(function(){
             let continueDecrease = true;
             if(item.quantity == 1) {
-                continueDecrease = confirm("Are you sure you want to remove this item from your cart?");
+                continueDecrease = confirm('Are you sure you want to remove this item from your cart?');
             }
             if(continueDecrease) {
                 if(item.quantity > 0) {
@@ -60,9 +60,9 @@ $(document).ready(function() {
                     saveCart();
                     cartItems.remove();
                 } else if(item.quantity == 1) {
-                    $(this).html("x");
+                    $(this).html('x');
                 } else {
-                    $(this).html("-");
+                    $(this).html('-');
                 }
             }
         });
@@ -72,14 +72,14 @@ $(document).ready(function() {
                 total += item.product.price;
                 $('.subtotal').html(`$${total.toFixed(2)}`);
                 $(this).parent().find('.quantity').html(item.quantity);
-                $(this).parent().find('.decreaseQuantity').html("-");
+                $(this).parent().find('.decreaseQuantity').html('-');
                 saveCart();
             }
         });
         cartItems.appendTo('.cart');
         total += item.quantity * item.product.price;
         $('.subtotal').html(`$${total.toFixed(2)}`);
-    });  
+    });
 
     $(`
         <tr class="d-flex">

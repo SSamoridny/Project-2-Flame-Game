@@ -2,9 +2,7 @@ const ORM = require('../config/orm.js');
 const orm = new ORM();
 
 class Product {
-    constructor() {
-        
-    }
+    constructor() {}
     getProduct(id) {
         return orm.getProduct(id);
     }
@@ -17,12 +15,7 @@ class Product {
     productPurchased(id, amount) {
         return orm.productPurchased(id, amount);
     }
-    updateProduct(product) {
 
-    }
-    insertProduct(product) {
-
-    }
 }
 
 module.exports = Product;

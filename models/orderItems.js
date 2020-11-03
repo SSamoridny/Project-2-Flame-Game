@@ -3,7 +3,7 @@ const orm = new ORM();
 
 class OrderItem {
     constructor() {
-        
+
     }
 
     async getOrderItem(id) {
