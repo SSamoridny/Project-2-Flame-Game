@@ -15,6 +15,7 @@
 ## Installation:
 
          Simply follow our Heroku link to see our functioning website or feel free to check out our code in the adjoining GitHub repository.
+[App Link](https://tranquil-temple-78360.herokuapp.com/)
 
 ## Usage:
 
@@ -26,8 +27,8 @@
 
 ## GitHUb Adress:
 
-   [Flame Game]SSamoridny/Project-2-Flame-Game
-   [App Link]https://tranquil-temple-78360.herokuapp.com/
+[Flame Game](SSamoridny/Project-2-Flame-Game)
+ 
 
 ## Email Address:
 
