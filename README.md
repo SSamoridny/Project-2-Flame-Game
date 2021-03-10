@@ -26,8 +26,8 @@
 
 ## GitHUb Adress:
 
-        SSamoridny/Project-2-Flame-Game
-        https://tranquil-temple-78360.herokuapp.com/
+   [Flame Game]SSamoridny/Project-2-Flame-Game
+   [App Link]https://tranquil-temple-78360.herokuapp.com/
 
 ## Email Address:
 
