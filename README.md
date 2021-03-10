@@ -25,7 +25,7 @@
 
         Anjali Pant: Front end design and backend engineering, Niki Fereidooni: Front end design and implementation, Karim Kapadia: Back end framework and implementation, and Shaun Samoridny: Project Coordinator and repo management with some minor contributions to front and back end implimentation
 
-## GitHUb Adress:
+## GitHub Adress:
 
 [Flame Game](https://github.com/SSamoridny/Project-2-Flame-Game)
  
