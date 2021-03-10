@@ -27,7 +27,7 @@
 
 ## GitHUb Adress:
 
-[Flame Game](SSamoridny/Project-2-Flame-Game)
+[Flame Game](https://github.com/SSamoridny/Project-2-Flame-Game)
  
 
 ## Email Address:
